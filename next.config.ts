@@ -1,9 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "puppy.instabizweb.com",
+        pathname: "/media/**",
+      },
+      {
+        protocol: "https",
+        hostname: "puppy.instabizweb.com",
+        pathname: "/_next/static/**",
+      },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {
